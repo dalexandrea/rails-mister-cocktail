@@ -1,24 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'doses/create'
+  root 'cocktails#index'
 
-  get 'doses/new'
-
-  get 'doses/destroy'
-
-  get 'cocktails/index'
-
-  get 'cocktails/show'
-
+  resources :cocktails do
+    resources :doses, only: [:new, :create]
+  end
+  resources :doses, only: [:destroy]
 end
-
-
-  # root 'cocktails#index'
-
-  # resources :cocktails do
-  #   resources :doses
-  # end
-
-  # resources :ingredients do
-  #   resources :doses
-  # end

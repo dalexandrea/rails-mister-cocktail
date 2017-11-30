@@ -1,2 +1,27 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Cocktails</h1>
+
+<div class="container">
+  <div class="row">
+
+    <% @cocktails.each do |drink| %>
+    <div class="col-xs-12 col-sm-3">
+      <%= render 'shared/card', cocktail: drink %>
+      <div class="buttons" style="display: flex">
+        <%= link_to 'Show', drink %>
+
+        <%= link_to 'Destroy', drink, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+
+    <% end %>
+
+    <br>
+
+
+  </div>
+</div>
+
+<%= link_to 'New Cocktail', new_cocktail_path %>
