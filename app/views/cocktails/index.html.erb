@@ -6,7 +6,7 @@
   <div class="row">
     <% @cocktails.each do |drink| %>
     <div class="col-xs-12 col-sm-3">
-      <%= render 'shared/card', cocktail: drink %>
+      <%= render 'shared/card', drink: drink %>
       <div class="buttons" style="display: flex">
         <%= link_to cocktail_path(drink) do %>
         <i class=" fa fa-glass"></i>

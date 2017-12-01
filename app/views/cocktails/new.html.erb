@@ -5,9 +5,11 @@
     <div class="col-sm-4 col-sm-offset-4">
       <%=  simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
-      <%= f.submit %>
-      <%= button_to "Back to all", cocktails_path, :class => "btn btn-primary" %>
+      <%= f.input :photo, as: :attachinary %>
+      <%= f.submit 'Make', class: "btn btn-primary" %>
       <% end %>
+      <%= button_to "Back to all", cocktails_path, class: "btn btn-primary", :method => "get" %>
     </div>
   </div>
 </div>
+
