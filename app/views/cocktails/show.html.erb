@@ -9,16 +9,19 @@
   </p>
   <%= link_to "delete", dose_path(dose), method: :delete %>
   <% end %>
-  <%= link_to "back to all", cocktails_path %>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :description %>
+      <%= f.input :dose %>
+      <%= f.association :ingredient%>
+      <%= f.button :submit  %>
+      <%= button_to "Back to all", cocktails_path, :class => "btn btn-primary" %>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :description %>
-  <%= f.input :dose %>
-  <%= f.association :ingredient%>
-  <%= f.button :submit  %>
-  <%= link_to "Back to all", cocktails_path %>
-  <% end  %>
-
-
+      <% end  %>
+    </div>
+  </div>
 </div>
+<!--
+#<#%= link_to "Back to all", cocktails_path %> -->
