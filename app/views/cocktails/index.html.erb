@@ -9,7 +9,7 @@
       <%= render 'shared/card', drink: drink %>
       <div class="buttons" style="display: flex">
         <%= link_to cocktail_path(drink), method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="fa fa-trash"></i>
+        <i class="fa fa-trash" style="color: black"></i>
         <% end %>
       </div>
     </div>

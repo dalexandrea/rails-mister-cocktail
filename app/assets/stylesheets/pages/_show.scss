@@ -7,11 +7,22 @@
   background-size: cover;
 }
 
-// #form_show {
-//   background-color: white;
-//   opacity: 0.1;
-// }
+#form_show {
+  margin-top: 20px;
+}
 
 .btn.btn-primary {
   margin-top: 10px;
+}
+
+#show_summery {
+ border: bold;
+ border-color: white;
+border-style: solid;
+margin-bottom: 50px;
+width: 300px; margin:0 auto;
+}
+
+.btn-danger.btn-xs {
+  opacity: 0.7;
 }
