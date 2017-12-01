@@ -1,6 +1,6 @@
 <%= render 'shared/banner' %>
 
-<h1 class="text-center">Cocktails</h1>
+<h1 class="text-center">Choose your drink 🍸</h1>
 
 <div class="container" style="background-color: #F4F4F4">
   <div class="row">
@@ -8,9 +8,6 @@
     <div class="col-xs-12 col-sm-3">
       <%= render 'shared/card', drink: drink %>
       <div class="buttons" style="display: flex">
-        <%= link_to cocktail_path(drink) do %>
-        <i class=" fa fa-glass"></i>
-        <% end %>
         <%= link_to cocktail_path(drink), method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="fa fa-trash"></i>
         <% end %>

@@ -1,8 +1,7 @@
-<div class="container text-center">
+<div id="cocktail_image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo.path, crop: :fill if @cocktail.photo?%>')">
+<div class="container text-center", style="color: white">
+
   <h1><%= @cocktail.name %></h1>
-  <% if @cocktail.photo? %>
-  <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
-<% end %>
   <% @cocktail.doses.each do |dose| %>
   <p>
     description: <%= dose.description %>
@@ -13,18 +12,17 @@
   <%= link_to "delete", dose_path(dose), method: :delete %>
   <% end %>
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
+    <div id="form_show" class="col-sm-4 col-sm-offset-4">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.error_notification %>
       <%= f.input :description %>
       <%= f.input :dose %>
       <%= f.association :ingredient%>
-      <%= f.button :submit  %>
+      <%= f.submit 'Add Dose', class: "btn btn-primary" %>
       <%= button_to "Back to all", cocktails_path, :class => "btn btn-primary" %>
 
       <% end  %>
     </div>
   </div>
 </div>
-<!--
-#<#%= link_to "Back to all", cocktails_path %> -->
+</div>

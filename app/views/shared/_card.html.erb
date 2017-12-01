@@ -1,6 +1,5 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path drink.photo.path, height: 300, width: 400, crop: :fill if drink.photo?%>')">
   <div class="card-description align-middle">
-    <h2><%= drink.name %></h2>
+    <h2><%= link_to drink.name, cocktail_path(drink) %></h2>
   </div>
-  <a class="card-link" href="#" ></a>
 </div>
